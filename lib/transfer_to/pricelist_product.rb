@@ -16,7 +16,17 @@ module TransferToApi
       @fx_rate = response.data[:fx_rate]
     end
 
-    # product_type seems to be either 'Airtime PIN Based' or 'Airtime PIN Less'
+    # product_types options seem to be:
+    # - 'Airtime PIN Less'
+    # - 'Airtime PIN Based'
+    # - 'Grocery PIN Based'
+    # - 'Mobile Broadband PIN'
+    # - 'LandLine PIN Less'
+    # - 'Television PIN Less'
+    # - 'Electricity PIN Based'
+    # - 'Grocery PIN Less'
+    # - 'Mobile Broadband'
+    # - 'Television PIN Based'
     def is_pin_based?
       @product_type.include?('PIN Based')
     end
